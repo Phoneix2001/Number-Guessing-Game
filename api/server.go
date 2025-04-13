@@ -40,7 +40,6 @@ func (s *Server) StartGame() {
 	if sysGuess == 0 {
 		sysGuess = 1
 	}
-	fmt.Print(sysGuess)
 	for i := range constants.LevelsChances[input] {
 		guessedNumber := 0
 		fmt.Print("\nEnter your guess: ")
@@ -65,7 +64,7 @@ func (s *Server) StartGame() {
 	fmt.Println("\nWant to Play Again: Y/N")
 	var wantToPlayAgain string
 	if _, err := fmt.Scanln(&wantToPlayAgain); err != nil {
-		fmt.Println(constants.ErrParseGuess)
+		fmt.Println("Error parsinf response")
 	}
 	fmt.Println()
 	if strings.ToLower(wantToPlayAgain) == "y" {
